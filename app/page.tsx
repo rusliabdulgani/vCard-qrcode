@@ -7,6 +7,7 @@ type FormDataType = {
   phone: string
   email: string
   address: string
+  company: string
 }
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
     name: '',
     phone: '',
     email: '',
-    address: ''
+    address: '',
+    company: ''
   })
   const [showQRCode, setShowQRCode] = useState<boolean>(false)
 
@@ -36,7 +38,7 @@ export default function Home() {
     'VERSION:3.0',
     `N:${formData.name}`, // Structured name
     `FN:${formData.name}`,   // Full name
-    `ORG:IT Dev`,
+    `ORG:${formData.company}`,
     `TITLE:Mr.`,
     `ADR;TYPE=home:${formData.address}`,
     `TEL;WORK:(021)11223344`,
@@ -78,6 +80,20 @@ export default function Home() {
           id="name"
           name="name"
           value={formData.name}
+          onChange={handleChange}
+          className="px-3 py-2 rounded-md border border-gray-300 text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div className="flex flex-col">
+        <label htmlFor="company" className="text-sm font-medium mb-2">
+          Company
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          value={formData.company}
           onChange={handleChange}
           className="px-3 py-2 rounded-md border border-gray-300 text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-500"
           required
