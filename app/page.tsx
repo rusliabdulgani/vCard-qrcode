@@ -61,15 +61,13 @@ export default function Home() {
             margin: 3,
             scale: 4,
             width: 200,
-            color: {
-              dark: '#010599FF',
-              light: '#FFBF60FF',
-            },
           }}
+          logo={{src: `https://iili.io/Jr9LZrB.jpg`}}
         /> 
         :
         null
       }
+      <h1 className="mb-10">QRCode import to VCard develop by FH Indonesia IT Dev</h1>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
       <div className="flex flex-col">
         <label htmlFor="name" className="text-sm font-medium mb-2">
